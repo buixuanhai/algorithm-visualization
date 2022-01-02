@@ -156,19 +156,6 @@ export default function RotateMatrix() {
         <Matrix title="Transformed" matrix={state[step]} />
       </div>
       <div>
-        <div style={{ marginBottom: 10 }}>
-          <label style={{ paddingRight: 10 }}>Matrix size</label>
-          <input
-            type="number"
-            min={0}
-            max={20}
-            value={size}
-            onChange={(e) => {
-              setSize(e.target.value);
-              setStep(0);
-            }}
-          />
-        </div>
         <Steps
           goToNext={() => {
             if (step < state.length - 1) {
@@ -193,6 +180,19 @@ export default function RotateMatrix() {
           length={state.length}
           onSetStep={(i) => setStep(i)}
         />
+        <div style={{ marginBottom: 10 }}>
+          <label style={{ paddingRight: 10 }}>Matrix size</label>
+          <input
+            type="number"
+            min={0}
+            max={20}
+            value={size}
+            onChange={(e) => {
+              setSize(e.target.value);
+              setStep(0);
+            }}
+          />
+        </div>
       </div>
     </div>
   );
